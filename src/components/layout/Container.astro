@@ -1,0 +1,19 @@
+---
+// Container.astro - 主卡片容器組件
+// Desktop：圓角陰影效果，Mobile：滿版顯示
+---
+
+<div class="w-full max-w-[1400px] bg-brand-surface md:rounded-[40px] shadow-none md:shadow-2xl overflow-hidden relative mx-auto transition-all duration-500">
+	<slot />
+</div>
+
+<style>
+	/* 確保容器在不同螢幕尺寸下正確顯示 */
+	@media (max-width: 768px) {
+		div {
+			border-radius: 0 !important;
+			box-shadow: none !important;
+			margin: 0 !important;
+		}
+	}
+</style>

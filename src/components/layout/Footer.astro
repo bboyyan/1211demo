@@ -1,0 +1,20 @@
+---
+// Footer.astro - 頁尾組件
+// 極簡風格，包含版權宣告與社群連結
+import { BRAND, SOCIAL_LINKS } from '@/lib/constants';
+---
+
+<footer class="bg-brand-surface border-t border-neutral-200 py-12 px-6 md:px-16 pb-24 md:pb-12">
+  <div class="flex flex-col md:flex-row justify-between items-center text-xs text-neutral-400 font-light tracking-wider gap-6">
+    <div class="text-center md:text-left">
+      &copy; 2024 {BRAND.fullName}. All Rights Reserved.
+    </div>
+    <div class="flex gap-8">
+      {SOCIAL_LINKS.map(link => (
+        <a href={link.href} class="hover:text-neutral-800 transition-colors">
+          {link.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</footer>
